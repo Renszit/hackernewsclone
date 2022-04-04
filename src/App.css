@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   min-height: 100vh;
   background-color: #282c34;
 }
@@ -22,7 +21,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #e4f1fe;
 }
 
 .App-link {
