@@ -10,7 +10,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>hackernews clone.</p>
       </header>
-      <div>
+      <div className="dashboard">
         <Dashboard />
       </div>
     </div>
