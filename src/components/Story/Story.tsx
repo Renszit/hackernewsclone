@@ -1,6 +1,11 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import "./Story.css";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import './Story.css';
+import {
+  LoadingSpinner,
+  StoryDiv,
+  TitleP,
+} from '../../common/styled-components/Wrappers';
 
 export type StoryProps = {
   story: number;
@@ -22,25 +27,27 @@ export interface FullStory {
 export default function Story({ story }: StoryProps) {
   const [fullStory, setFullStory] = useState<FullStory | null>(null);
 
-  const fetchStory = async () => {
-    const response = await axios.get(
-      "https://hacker-news.firebaseio.com/v0/item/" + story + ".json"
-    );
-    setFullStory(response.data);
-  };
-
   useEffect(() => {
+    const fetchStory = async () => {
+      const response = await axios.get(
+        'https://hacker-news.firebaseio.com/v0/item/' + story + '.json'
+      );
+      setFullStory(response.data);
+    };
+
     fetchStory();
   }, [story]);
 
   return (
-    <div>
-      {fullStory != null && (
-        <a href={fullStory.url}>
-          <p className={"storyTitle"}>{fullStory.title}</p>
-          <p className={"by"}> by: {fullStory.by}</p>
+    <StoryDiv>
+      {fullStory != null ? (
+        <a target='_blank' href={fullStory.url} rel='noreferrer'>
+          <TitleP>{fullStory.title}</TitleP>
+          <p className={'by'}> by: {fullStory.by}</p>
         </a>
+      ) : (
+        <LoadingSpinner />
       )}
-    </div>
+    </StoryDiv>
   );
 }
