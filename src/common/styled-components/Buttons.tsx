@@ -5,9 +5,14 @@ export const BasicButton = styled.button`
   border: 1px solid #ccc;
   border-radius: 3px;
   margin-right: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 30px;
+  :hover {
+    background: #ccc;
+    cursor: pointer;
+  }
 `;
-
-//modern styled more button with hover effect
 
 export const MoreButton = styled.button`
   background: #fff;
@@ -19,5 +24,6 @@ export const MoreButton = styled.button`
   height: 30px;
   :hover {
     background: #ccc;
+    cursor: pointer;
   }
 `;
