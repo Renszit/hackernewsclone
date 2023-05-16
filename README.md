@@ -26,7 +26,6 @@ A Hacker News clone built with React, styled-components, and TypeScript.
 - [TypeScript](https://www.typescriptlang.org/)
 - [Axios](https://axios-http.com/)
 - [React Router](https://reactrouter.com/)
-- [React Helmet](https://github.com/nfl/react-helmet)
 
 ## Setup
 
